@@ -1,32 +1,34 @@
-import { MOVIES_REQUEST, MOVIES_SUCCESS, MOVIES_FAILURE } from '../actions';
+import { LOAD_REQUEST, LOAD_SUCCESS, LOAD_FAILURE } from '../actions';
 
 const initialState = {
-  movies: [],
-  requestPending: false,
-  error: false
+  isLoading: false,
+  isError: false,
+  isSuccess: false,
+  movies: []
 };
 
 export default function(state = initialState, action) {
   switch(action.type) {
-    case MOVIES_REQUEST: 
-      return Object.assign({}, state, {
-        requestPending: true,
-        error: false
-      });
+    case LOAD_REQUEST: 
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+        isSuccess: false
+      };
 
-    case MOVIES_SUCCESS: {
-      return Object.assign({}, state, {
-        requestPending: false,
-        error: false,
+    case LOAD_SUCCESS: {
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+        isSuccess: true,
         movies: action.movies
-      });
+      };
     }
 
-    case MOVIES_FAILURE: {
-      return Object.assign({}, state, {
-        requestPending: false,
-        error: action.error
-      })
+    case LOAD_FAILURE: {
+      // ....
     }
 
     default:

@@ -4,22 +4,11 @@ import { loadMovies } from '../actions';
 import MovieList from './MovieList';
 
 const mapStateToProps = (state, ownProps) => {
-  return {
-    movies: state.movies || [],
-    requestPending: state.requestPending || false
-  };
+  // ...
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    onDidMount: () => {
-      loadMovies('Seven', dispatch);
-    },
-
-    onSearchChange: (searchVal) => {
-      loadMovies(searchVal, dispatch);
-    }
-  }
+  // ...
 };
 
 const MovieListApp = connect(
