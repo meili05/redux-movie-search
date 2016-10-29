@@ -15,5 +15,16 @@ She already built some of it, but it doesn't quite seem to work. There's lots of
 
 ## Outline
 
+* The completed app should send the correct GET request to the server.
+* The completed app dynamically searched the OMDBApi for whatever string is in the input box.
+* The results are displayed below the search component. 
+
+![screenshot](http://www.zimagez.com/full/3a816d1363ed7646817defaa1cf6b754395e6637689e247c6924c0fb25bf0a9d3772370556c2370a9afbe4e0a889cb903b5c8e80fd74d907.php)
+
+## Steps
+
+1. Okay so your first goal may be to see what Georgia left so far for you. What do you think is missing and stopping the basic view from rendering? (Hint: your basic javascript console may hold the secret)
+
+
 
 
