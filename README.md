@@ -19,7 +19,7 @@ She already built some of it, but it doesn't quite seem to work. There's lots of
 * The completed app dynamically searched the OMDB Api for whatever string is in the input box.
 * The results are displayed below the search component. 
 
-![screenshot](app.png)
+![screenshot](/app.png)
 
 
 ## Steps
