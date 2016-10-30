@@ -19,7 +19,8 @@ She already built some of it, but it doesn't quite seem to work. There's lots of
 * The completed app dynamically searched the OMDB Api for whatever string is in the input box.
 * The results are displayed below the search component. 
 
-![screenshot](http://www.zimagez.com/full/3a816d1363ed7646817defaa1cf6b754395e6637689e247c6924c0fb25bf0a9d3772370556c2370a9afbe4e0a889cb903b5c8e80fd74d907.php)
+![screenshot](./app.png)
+
 
 ## Steps
 
