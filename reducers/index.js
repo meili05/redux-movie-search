@@ -9,7 +9,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch(action.type) {
-    case LOAD_REQUEST: 
+    case LOAD_REQUEST:
       return {
         ...state,
         isLoading: true,
@@ -23,12 +23,17 @@ export default function(state = initialState, action) {
         isLoading: true,
         isError: false,
         isSuccess: true,
-        movies: action.movies
+        movies: action.data
       };
     }
 
     case LOAD_FAILURE: {
-      // ....
+      return {
+        ...state,
+        isLoading: true,
+        isError: true,
+        isSuccess: false,
+      };
     }
 
     default:

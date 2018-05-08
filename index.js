@@ -4,14 +4,21 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import MovieListApp from './components/MovieListApp';
 import reducer from './reducers';
+import thunk from 'redux-thunk';
+import promise from 'redux-promise-middleware';
 
-const store = createStore(reducer,
+const middleware = applyMiddleware(promise(), thunk);
+
+const store = createStore(
+  reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ &&
-  window.__REDUX_DEVTOOLS_EXTENSION__());
+  window.__REDUX_DEVTOOLS_EXTENSION__(),
+  middleware
+);
 
 
 ReactDOM.render(

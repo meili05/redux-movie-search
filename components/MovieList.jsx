@@ -1,17 +1,18 @@
-import React, { PropTypes, Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class MovieList extends Component {
 	constructor(props) {
 		super(props);
-		this.onSearch = this.onSearch.bind(this);
 	}
 
 	onSearch(event) {
-		// ...
+		const searchTarget = event.target.value;
+		this.props.loadMovies(searchTarget);
 	}
 
 	componentDidMount() {
-		// ...
+		this.props.loadMovies('batman');
 	}
 
 	render() {
@@ -21,14 +22,14 @@ class MovieList extends Component {
 
 		return (
 			<div>
-				<input type="text" onChange={this.onSearch}/>
+				<input type="text" onChange={(event) => this.onSearch(event)}/>
 				<h1> Movie List </h1>
-				{this.props.requestPending && 				
+				{this.props.requestPending &&
 					<h3> Request Pending </h3>
 			 	}
 
-				{!this.props.requestPending && 
-					<div>			
+				{!this.props.requestPending &&
+					<div>
 						<ul>
 							{movies}
 						</ul>
@@ -39,10 +40,10 @@ class MovieList extends Component {
 	}
 }
 
-MovieList.propTypes = {
-	onSearchChange: PropTypes.func.isRequired,
-	movies: PropTypes.array.isRequired,
-	onDidMount: PropTypes.func
-};
+// MovieList.propTypes = {
+// 	onSearchChange: PropTypes.func.isRequired,
+// 	movies: PropTypes.array.isRequired,
+// 	onDidMount: PropTypes.func
+// };
 
 export default MovieList;
